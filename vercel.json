@@ -1,0 +1,8 @@
+{
+  "crons": [
+    {
+      "path": "/test?securedKey=undefined",
+      "schedule": "*/1 * * * *"
+    }
+  ]
+}
