@@ -7,11 +7,11 @@ const crons = [
 	}
 ];
 
-let vercelConfig = {};
-if (existsSync('./vercel.json')) {
-	vercelConfig = JSON.parse(readFileSync('./vercel.json', 'utf8'));
+let buildOutput = {};
+if (existsSync('./.vercel/output/config.json')) {
+	buildOutput = JSON.parse(readFileSync('./.vercel/output/config.json', 'utf8'));
 }
 
-vercelConfig.crons = crons;
+buildOutput.crons = crons;
 
-writeFileSync('./vercel.json', JSON.stringify(vercelConfig, null, 2));
+writeFileSync('./.vercel/output/config.json', JSON.stringify(buildOutput, null, 2));
